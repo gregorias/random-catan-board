@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+    "http://www.w3.org/TR/xhhtml/DTD/xhtml11.dtd">
+
+<html>
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Generator plansz do Osadników z Catanu</title>
+    </head>
+
+    <body>
+
+        <div id="header">
+            <h1>Generator plansz do Osadników z Catanu</h1>
+        </div>
+
+        <div id="wrapper" style='position: relative'>
+            <div id="main">
+                <h3>Odświeżanie tworzy nową planszę</h3>
+            </div>
+            <div style='position: absolute'>
+                {% for tile in tiles %}
+                <img src='static/img/{{ tile.tile }}.png' style='position:
+                absolute; left: {{tile.pos.0}}px; top: {{tile.pos.1}}px' />
+                {% endfor %}
+                {% for dice in dices %}
+                <div style='position: absolute; z-index: 1; width:226px;
+                    height:199px; left: {{dice.pos.0}}px; top: {{dice.pos.1}}px;
+                    color:{{dice.color}}; text-align:center;
+                    font-size:{{dice.size}}px; font-weight:bold'>
+                    <div style='vertical-align:middle; line-height:199px'>{{dice.dice}}</div></div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div id="footer" style='position: relative;'>
+            <span>&copy; 2013 Grzegorz Milka</span>
+        </div>
+
+    </body>
+
+</html>

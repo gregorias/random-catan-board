@@ -1,0 +1,31 @@
+GIMP
+    To prepare the tiles I used GIMP. First I selected one hex using free
+    selection tool and changed the selection to path (select->to path) ,so that
+    i can move the image and the selection independently. 
+    Then I selected the tile to be copied with select->from path (SHIFT + V),
+    copied it (CTRL+C) and created new png image from selection (CTRL + SHIFT +
+    V). I moved the image so that the path selected new hex and repeated the
+    process till all is done.
+
+Django
+        To start django: django-admin.py startproject (name CatanBoard)
+        Had to add to settings (CatanBoard/settings.py): 
+            INSTALLED_APPS: CatanBoard
+            Changed timezone and language
+            Set STATIC_URL for images to (so that we can get them through:
+                http_address/static/real_path):
+                'static'
+            Set STATIC_ROOT folder for the place where django should place
+                static files.
+
+            Place static files in CatanBoard APP(!) in folder static.
+            Then run python manage collectstatic to make django copy static
+            images to selected folder ('templates/') and prepare them.
+
+        Had a little fight with HTML the problems i solved are:
+            How to display overlapping images (position:absolute)
+            How to display text on images (as above)
+            Text align (notice vertical-align and line-height)
+
+        To run django on given ip and port run:
+            django manage-py
